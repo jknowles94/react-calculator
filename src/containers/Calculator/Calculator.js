@@ -8,9 +8,13 @@ class Calculator extends Component {
     return (
     	<div className="calculator">
         <Display/>
-        <Numbers/>
-        <p>Operators</p>
-        <p>Other</p>
+        <div className="calc_btns">
+        	<div>
+	        	<p>Other</p>
+	        	<Numbers/>
+	        </div>
+	        <p>Operators</p>
+	       </div>
       </div>
     );
   }

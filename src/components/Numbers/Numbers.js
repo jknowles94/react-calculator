@@ -1,8 +1,9 @@
 import React from 'react';
 import NumberButton from './NumberButton/NumberButton';
+import './Numbers.scss';
 
 const Numbers = (props) => {
-	const NumberList = [1,2,3,4,5,6,7,8,"."];
+	const NumberList = [1,2,3,4,5,6,7,8,9,0,"."];
 
 	let btns = NumberList.map((item, index) => {
 		return ( 
@@ -11,9 +12,9 @@ const Numbers = (props) => {
 	});
 
   return (
-  	<React.Fragment>
+  	<div className="numbers">
   		{btns}
-  	</React.Fragment>
+  	</div>
   );
 };
 
