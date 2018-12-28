@@ -4,7 +4,7 @@ import './Display.scss';
 const Display = (props) => {
   return (
   	<div className="display">
-  		240
+  		{props.value}
   	</div>
   );
 };

@@ -7,7 +7,7 @@ const Numbers = (props) => {
 
 	let btns = NumberList.map((item, index) => {
 		return ( 
-			<NumberButton key={index}>{item}</NumberButton>
+			<NumberButton click={() => props.click(item)} key={index}>{item}</NumberButton>
  		);
 	});
 
