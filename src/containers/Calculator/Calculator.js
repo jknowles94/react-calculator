@@ -8,8 +8,7 @@ import Operator from '../../components/Operators/Operator/Operator';
 class Calculator extends Component {
   state = {
     total: null,
-    next: null,
-    operation: null
+    next: null
   }
 
   numberInputHandler = (input) => {
@@ -28,7 +27,12 @@ class Calculator extends Component {
   }
 
   operationHandler = (input) => {
+    console.log(input);
+    // take the next value and store
+    // set the operator
+    // set next value back to null
 
+    //If equel then get the value of sum and set to total
   }
 
   render() {
@@ -38,13 +42,13 @@ class Calculator extends Component {
         <div className="calc_btns">
         	<div>
 	        	<div className="numbers">
-              <Operator type="grey">C</Operator>
-              <Operator type="grey">+/-</Operator>
-              <Operator type="grey">%</Operator>
+              <Operator click={() => this.operationHandler("AC")} type="grey">AC</Operator>
+              <Operator click={() => this.operationHandler("+/-")} type="grey">+/-</Operator>
+              <Operator click={() => this.operationHandler("%")} type="grey">%</Operator>
             </div>
 	        	<Numbers click={this.numberInputHandler}/>
 	        </div>
-	        <Operators/>
+	        <Operators click={this.operationHandler}/>
 	       </div>
       </div>
     );

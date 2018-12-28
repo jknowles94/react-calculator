@@ -6,7 +6,7 @@ const Operators = (props) => {
 	const OperatorList = ["/", "x", "-", "+", "="];
 	let opList = OperatorList.map((op, index) => {
 		return (
-			<Operator key={index}>{op}</Operator>
+			<Operator key={index} click={() => props.click(op)}>{op}</Operator>
 		)
 	});
 
