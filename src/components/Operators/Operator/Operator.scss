@@ -1,5 +1,5 @@
-.NumberBtn {
-	background: #333333;
+.OperatorBtn {
+	background: #ef9228;
 	color: #fff;
 	text-align: center;
 	font-size: 30px;
@@ -9,10 +9,8 @@
 	line-height: 80px;
 	margin-bottom: 10px;
 
-	&.grow {
-		flex-grow: 0.9;
-		border-radius: 50px;
-		text-align: left;
-		padding-left: 35px;
+	&.grey {
+		background: #a5a5a5;
+		color: #000;
 	}
 }
