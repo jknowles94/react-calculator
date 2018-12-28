@@ -8,11 +8,10 @@ import Operator from '../../components/Operators/Operator/Operator';
 class Calculator extends Component {
   state = {
     total: null,
-    next: null
+    next: null  
   }
 
   numberInputHandler = (input) => {
-    console.log("fire");
     // this will update the next value of the sum
     let numArray = [];
     if(this.state.next === null) {
@@ -26,13 +25,24 @@ class Calculator extends Component {
     }
   }
 
-  operationHandler = (input) => {
-    console.log(input);
-    // take the next value and store
-    // set the operator
-    // set next value back to null
+  operationHandler = (operation) => {
+    //Somehow find the logic to get the operator and store the next value then reset to get the next value
+    switch(operation) {
+      case("AC"):
+        this.setState({
+          total: null,
+          next: null
+        });
+      break;
 
-    //If equel then get the value of sum and set to total
+      case("="):
+        //Do some equel logic for the finished sum
+      break;
+
+      default:
+        console.log("default operators here");
+    }
+
   }
 
   render() {
