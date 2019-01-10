@@ -3,11 +3,17 @@ import Operator from './Operator/Operator';
 import './Operators.scss';
 
 const Operators = (props) => {
-	const OperatorList = ["/", "x", "-", "+", "="];
+	const OperatorList = ["/", "*", "-", "+", "="];
 	let opList = OperatorList.map((op, index) => {
-		return (
-			<Operator key={index} click={() => props.click(op)}>{op}</Operator>
-		)
+		if(op === "*") {
+			return (
+				<Operator key={index} click={() => props.click(op)}>x</Operator>
+			)
+		} else {
+			return (
+				<Operator key={index} click={() => props.click(op)}>{op}</Operator>
+			)
+		}
 	});
 
   return (

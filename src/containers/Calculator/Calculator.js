@@ -7,40 +7,34 @@ import Operator from '../../components/Operators/Operator/Operator';
 
 class Calculator extends Component {
   state = {
-    total: null,
-    next: null  
+    total: ""  
   }
 
   numberInputHandler = (input) => {
-    // this will update the next value of the sum
-    let numArray = [];
-    if(this.state.next === null) {
-      this.setState({next: input});
+    if(this.state.total === null) {
+      this.setState({total: input});
     } else {
-      numArray.push(this.state.next, input)
-
-      numArray = numArray.join('');
-
-      this.setState({next: numArray});
+      this.setState({total: this.state.total + input});
     }
   }
 
   operationHandler = (operation) => {
-    //Somehow find the logic to get the operator and store the next value then reset to get the next value
+    //Somehow find the logic to get the operator and store the total value then reset to get the total value
     switch(operation) {
       case("AC"):
         this.setState({
-          total: null,
-          next: null
+          total: ""
         });
       break;
 
       case("="):
-        //Do some equel logic for the finished sum
+        this.setState((prevState) => {
+          return {total: eval(prevState.total)} 
+        });
       break;
 
       default:
-        console.log("default operators here");
+        this.numberInputHandler(operation);
     }
 
   }
@@ -48,7 +42,7 @@ class Calculator extends Component {
   render() {
     return (
     	<div className="calculator">
-        <Display value={this.state.total || this.state.next || "0"}/>
+        <Display value={this.state.total || "0"}/>
         <div className="calc_btns">
         	<div>
 	        	<div className="numbers">
